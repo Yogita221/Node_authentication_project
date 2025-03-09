@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html , body {
+            height: 100%;
+            width:  100%;
+        }
+
+        main {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .posts {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap : 1rem;
+            width: 100%;
+        }
+
+        .post { 
+            overflow: hidden;
+            border-radius: 10px;
+            object-fit: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post img {
+            width: 20rem ;
+            height: 25rem;
+            object-fit: cover;
+        }
+ 
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            color: white;
+            background-color: rgb(23, 22, 22);
+        }
+
+        .user img {
+            width: 2.5em;
+            height: 2.5em;
+            border-radius: 50%;
+        }
+
+        .caption{
+            padding: 1rem;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="posts">
+            <% posts.forEach((post)=>{ %>
+                <div class="post">
+                    <div class="user">
+                        <img src="<%=post.author.profileImage%>" alt="">
+                        <h1><%= post.author.username %></h1>
+                    </div>
+                    <img src="<%=post.media%>" alt="">
+                    <p class="caption"><%=post.caption %></p>
+                </div>
+            <% }) %>
+            
+        </section>
+    </main>
+</body>
+</html> 
