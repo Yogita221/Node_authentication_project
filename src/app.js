@@ -13,4 +13,8 @@ app.use(cookieParser())
  app.use('/users', userRoutes)
  app.use('/posts', postRoutes)
 
+ app.get("/", (req, res) => {
+    res.send("Welcome to the Node Authentication Project!");
+});
+
 module.exports = app;
